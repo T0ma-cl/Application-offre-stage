@@ -6,6 +6,9 @@ class Stage:
         self.r=rémunération
         self.p=places
         self.ref=référence
+        self.liste_elvint = []
+        
+    
     def afficher(self):
         print("Entreprise:",self.e)
         print("Durée:",self.d)
