@@ -8,7 +8,7 @@ liste_ent = []
 liste_stages = []
 liste_elv = []
 stage_elv = []
-elvint=[]
+liste_elvint = []
 
 while True:
     choix = input("""---Menu---
@@ -197,7 +197,7 @@ Votre choix: """)
                                         stage.afficher()  # Appel à la méthode afficher pour montrer les détails du stage
                                     x = int(input("Entrez le numéro du stage qui vous intéresse: ")) - 1
                                     if 0 <= x < len(liste_stages):
-                                        liste_stages[x].elvint.append(eleve)  # Assure-toi que `eleve` est une instance valide
+                                        liste_stages[x].liste_elvint.append(eleve)  # Assure-toi que `eleve` est une instance valide
                                         stage_elv.append(liste_stages[x])
                                         print("Candidature enregistrée")
                                     else:
@@ -220,7 +220,7 @@ Votre choix: """)
                                                 print(f"{i}. {stage.titre}")
                                             a = int(input("Entrez le numéro de la candidature que vous souhaitez supprimer: ")) - 1
                                             if 0 <= a < len(stage_elv):
-                                                stage_elv[a].elvint.remove(eleve)  # Utilisation de la notation pointée pour accéder à elvint
+                                                stage_elv[a].liste_elvint.remove(eleve)  # Utilisation de la notation pointée pour accéder à elvint
                                                 del stage_elv[a]
                                                 print("Candidature supprimée")
                                             else:
@@ -231,7 +231,7 @@ Votre choix: """)
                                             print("Aucune candidature en cours.")
                                         else:
                                             for stage in stage_elv:
-                                                print(f"Titre: {stage.titre}, Description: {stage.description}")
+                                                stage.afficher()
                                     
                                     elif choix_cand == "3":
                                         break
